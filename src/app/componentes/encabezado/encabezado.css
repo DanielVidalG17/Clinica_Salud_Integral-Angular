@@ -1,0 +1,42 @@
+header {
+	position: relative;
+	overflow: hidden;
+	border-bottom: 1px solid var(--clinica-line);
+	background: linear-gradient(110deg, #fff 0%, #eef6fd 72%, #f8fbff 100%);
+}
+
+header h1 {
+	margin-bottom: 0.35rem;
+	color: var(--clinica-blue) !important;
+	font-size: clamp(1.8rem, 4vw, 2.6rem);
+	font-weight: 700;
+}
+
+header p {
+	color: var(--clinica-muted);
+	font-size: 1.05rem;
+}
+
+header a {
+	display: inline-flex;
+	width: 2.7rem;
+	height: 2.7rem;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid var(--clinica-line);
+	border-radius: 50%;
+	color: var(--clinica-blue);
+	transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+header a:hover {
+	transform: translateY(-2px);
+	background: var(--clinica-blue);
+	color: #fff;
+}
+
+@media (max-width: 767.98px) {
+	header .row {
+		row-gap: 1rem;
+	}
+}

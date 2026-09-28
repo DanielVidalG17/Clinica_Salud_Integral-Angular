@@ -1,0 +1,36 @@
+:host {
+	display: block;
+}
+
+.navbar {
+	position: sticky;
+	z-index: 1020;
+	top: 0;
+	background: var(--clinica-ink) !important;
+	box-shadow: 0 5px 18px rgb(23 59 58 / 14%);
+}
+
+.navbar-brand {
+	font-weight: 700;
+}
+
+.navbar .nav-link {
+	padding-inline: 0.9rem;
+	color: rgb(255 255 255 / 78%);
+	transition: color 160ms ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus-visible {
+	color: #a8d4f5;
+}
+
+.navbar-toggler {
+	border-color: rgb(255 255 255 / 40%);
+}
+
+@media (max-width: 767.98px) {
+	.navbar-nav {
+		padding-top: 0.6rem;
+	}
+}

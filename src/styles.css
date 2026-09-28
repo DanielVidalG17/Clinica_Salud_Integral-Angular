@@ -1,0 +1,47 @@
+:root {
+    --clinica-ink: #183b63;
+    --clinica-blue: #1769aa;
+    --clinica-sky: #79b8e7;
+    --clinica-muted: #61748b;
+    --clinica-paper: #f7faff;
+    --clinica-line: #d8e4f0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--clinica-paper);
+    color: var(--clinica-ink);
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+h1,
+h2,
+h3,
+.navbar-brand {
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+section[id] {
+    scroll-margin-top: 5rem;
+}
+
+section > .container > h2 {
+    margin-bottom: 2rem !important;
+    color: var(--clinica-ink);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+    outline: 3px solid var(--clinica-sky);
+    outline-offset: 3px;
+}

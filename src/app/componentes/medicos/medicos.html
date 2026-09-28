@@ -1,0 +1,112 @@
+<section id="medicos" class="py-5">
+
+    <div class="container">
+
+        <h2 class="text-center mb-4">
+            Nuestros médicos
+        </h2>
+
+
+        <div class="row">
+
+            <!-- SIDEBAR -->
+            <aside class="col-12 col-sm-2 col-md-4 mb-4">
+
+                <div class="border p-3">
+
+                    <h3 class="h5">
+                        Especialidades
+                    </h3>
+
+                    <div class="list-group">
+
+                        @for (especialidad of especialidades; track especialidad.id) {
+
+                            <button
+                                type="button"
+                                class="list-group-item list-group-item-action text-start"
+                                [class.active]="especialidadSeleccionada.id === especialidad.id"
+                                (click)="seleccionarEspecialidad(especialidad)">
+
+                                {{ especialidad.nombre }}
+
+                            </button>
+
+                        }
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+
+            <!-- CONTENIDO -->
+            <div class="col-12 col-sm-10 col-md-8">
+
+                <!-- DESCRIPCIÓN -->
+                <div class="especialidad-descripcion border p-3 mb-4">
+
+                    <h3 class="h5">
+                        {{ especialidadSeleccionada.nombre }}
+                    </h3>
+
+                    <p class="mb-0">
+                        {{ especialidadSeleccionada.descripcion }}
+                    </p>
+
+                </div>
+
+
+                <!-- MÉDICOS -->
+                <div class="row">
+
+                    @for (medico of medicos; track medico.id) {
+
+                        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+
+                            <div class="card h-100 border">
+
+                                <img
+                                    [src]="medico.imagen"
+                                    class="card-img-top img-fluid"
+                                    [alt]="medico.nombre">
+
+
+                                <div class="card-body text-center">
+
+                                    <h3 class="card-title h5">
+                                        {{ medico.nombre }}
+                                    </h3>
+
+                                    <p class="card-text">
+                                        {{ medico.especialidad }}
+                                    </p>
+
+                                    <p class="card-text">
+                                        {{ medico.motivacion }}
+                                    </p>
+
+                                    <a
+                                        href="#registro"
+                                        class="btn btn-primary">
+                                        Agendar cita
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    }
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

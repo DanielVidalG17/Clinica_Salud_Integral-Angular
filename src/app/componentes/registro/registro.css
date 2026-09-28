@@ -1,0 +1,71 @@
+section {
+	background: linear-gradient(145deg, #eff6fd 0%, #fff 62%, #f4f9ff 100%);
+}
+
+#registro .container {
+	max-width: 980px;
+}
+
+#registro > .container > p {
+	color: var(--clinica-muted);
+}
+
+#registro form {
+	padding: clamp(1.1rem, 4vw, 2.25rem);
+	border: 1px solid var(--clinica-line);
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0 12px 34px rgb(23 59 58 / 8%);
+}
+
+#registro .form-label {
+	margin-bottom: 0.4rem;
+	color: var(--clinica-ink);
+	font-weight: 600;
+}
+
+#registro .form-control {
+	min-height: 44px;
+	border-color: #cbd9e8;
+	border-radius: 6px;
+}
+
+#registro .form-control:focus {
+	border-color: var(--clinica-blue);
+	box-shadow: 0 0 0 0.2rem rgb(23 105 170 / 15%);
+}
+
+#registro .form-check-input:checked {
+	border-color: var(--clinica-blue);
+	background-color: var(--clinica-blue);
+}
+
+#registro .form-check-label {
+	color: var(--clinica-muted);
+}
+
+#registro .form-text.text-danger {
+	margin-top: 0.35rem;
+	font-weight: 500;
+}
+
+#registro button[type="submit"] {
+	min-height: 46px;
+	padding: 0.65rem 1.6rem;
+	border-color: var(--clinica-blue);
+	background: var(--clinica-blue);
+	font-weight: 600;
+}
+
+#registro button[type="submit"]:hover {
+	border-color: var(--clinica-ink);
+	background: var(--clinica-ink);
+}
+
+@media (max-width: 575.98px) {
+	#registro .d-flex:has(.form-check-inline) {
+		flex-wrap: wrap;
+		row-gap: 0.45rem;
+	}
+}
+ 

@@ -1,0 +1,32 @@
+footer {
+	background: var(--clinica-ink) !important;
+}
+
+footer h2 {
+	color: #fff;
+}
+
+footer p {
+	color: rgb(255 255 255 / 74%);
+}
+
+footer a {
+	display: inline-flex;
+	width: 2.65rem;
+	height: 2.65rem;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid rgb(255 255 255 / 25%);
+	border-radius: 50%;
+	transition: color 160ms ease, background-color 160ms ease, border-color 160ms ease;
+}
+
+footer a:hover {
+	border-color: #f3b49e;
+	background: #f3b49e;
+	color: var(--clinica-ink) !important;
+}
+
+footer .border-top {
+	border-color: rgb(255 255 255 / 20%) !important;
+}

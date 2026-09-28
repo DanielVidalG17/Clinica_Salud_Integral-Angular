@@ -1,0 +1,321 @@
+<section id="registro" class="py-5">
+
+    <div class="container">
+
+        <h2 class="text-center mb-4">
+            Registro de usuario
+        </h2>
+
+        <p class="text-center lead mb-4">
+            Regístrate en nuestra clínica para acceder a nuestros servicios.
+        </p>
+
+
+        <form (ngSubmit)="registrar()">
+
+            <div class="row">
+
+                <!-- NOMBRES -->
+                <div class="col-12 col-md-6 mb-3">
+
+                    <label for="nombres" class="form-label">
+                        Nombres *
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="nombres"
+                        name="nombres"
+                        [(ngModel)]="nombres"
+                        (ngModelChange)="nombres = validarLetras($event, 'nombres')"
+                        (blur)="validarCampoObligatorio(nombres, 'nombres')">
+
+                    @if (errorNombres) {
+                        <div class="form-text text-danger">
+                            {{ errorNombres }}
+                        </div>
+                    }
+
+                </div>
+
+
+                <!-- APELLIDOS -->
+                <div class="col-12 col-md-6 mb-3">
+
+                    <label for="apellidos" class="form-label">
+                        Apellidos *
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="apellidos"
+                        name="apellidos"
+                        [(ngModel)]="apellidos"
+                        (ngModelChange)="apellidos = validarLetras($event, 'apellidos')"
+                        (blur)="validarCampoObligatorio(apellidos, 'apellidos')">
+
+                    @if (errorApellidos) {
+                        <div class="form-text text-danger">
+                            {{ errorApellidos }}
+                        </div>
+                    }
+
+                </div>
+
+
+                <!-- DOCUMENTO -->
+                <div class="col-12 col-md-6 mb-3">
+
+                    <label for="documento" class="form-label">
+                        Documento de identidad *
+                    </label>
+
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="documento"
+                        name="documento"
+                        inputmode="numeric"
+                        [(ngModel)]="documento"
+                        (ngModelChange)="documento = validarNumeros($event, 'documento')"
+                        (blur)="validarCampoObligatorio(documento, 'documento')">
+
+                    @if (errorDocumento) {
+                        <div class="form-text text-danger">
+                            {{ errorDocumento }}
+                        </div>
+                    }
+
+                </div>
+
+
+                <!-- CELULAR -->
+                <div class="col-12 col-md-6 mb-3">
+
+                    <label for="celular" class="form-label">
+                        Celular *
+                    </label>
+
+                    <input
+                        type="tel"
+                        class="form-control"
+                        id="celular"
+                        name="celular"
+                        inputmode="numeric"
+                        [(ngModel)]="celular"
+                        (ngModelChange)="celular = validarNumeros($event, 'celular')"
+                        (blur)="validarCampoObligatorio(celular, 'celular')">
+
+                    @if (errorCelular) {
+                        <div class="form-text text-danger">
+                            {{ errorCelular }}
+                        </div>
+                    }
+
+                </div>
+
+
+                <!-- CORREO -->
+                <div class="col-12 col-md-6 mb-3">
+
+                    <label for="correo" class="form-label">
+                        Correo electrónico *
+                    </label>
+
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="correo"
+                        name="correo"
+                        [(ngModel)]="correo"
+                        (blur)="validarCorreo()">
+
+                    @if (errorCorreo) {
+                        <div class="form-text text-danger">
+                            {{ errorCorreo }}
+                        </div>
+                    }
+
+                </div>
+
+
+                <!-- GÉNERO -->
+                <div class="col-12 col-md-6 mb-3">
+
+                    <label class="form-label">
+                        Género *
+                    </label>
+
+                    <div class="d-flex">
+
+                        <div class="form-check form-check-inline">
+
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="genero"
+                                id="generoH"
+                                value="Hombre"
+                                [(ngModel)]="genero"
+                                (change)="validarGenero()">
+
+                            <label
+                                class="form-check-label"
+                                for="generoH">
+                                Hombre
+                            </label>
+
+                        </div>
+
+
+                        <div class="form-check form-check-inline">
+
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="genero"
+                                id="generoM"
+                                value="Mujer"
+                                [(ngModel)]="genero"
+                                (change)="validarGenero()">
+
+                            <label
+                                class="form-check-label"
+                                for="generoM">
+                                Mujer
+                            </label>
+
+                        </div>
+
+
+                        <div class="form-check form-check-inline">
+
+                            <input
+                                class="form-check-input"
+                                type="radio"
+                                name="genero"
+                                id="generoO"
+                                value="Otro"
+                                [(ngModel)]="genero"
+                                (change)="validarGenero()">
+
+                            <label
+                                class="form-check-label"
+                                for="generoO">
+                                Otro
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    @if (errorGenero) {
+                        <div class="form-text text-danger">
+                            {{ errorGenero }}
+                        </div>
+                    }
+
+                </div>
+
+
+                <!-- CONTRASEÑA -->
+                <div class="col-12 col-md-6 mb-3">
+
+                    <label for="contrasena" class="form-label">
+                        Contraseña *
+                    </label>
+
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="contrasena"
+                        name="contrasena"
+                        [(ngModel)]="contrasena"
+                        (blur)="validarCampoObligatorio(contrasena, 'contrasena')"
+                        (input)="confirmarContrasena && validarConfirmarContrasena()">
+
+                    @if (errorContrasena) {
+                        <div class="form-text text-danger">
+                            {{ errorContrasena }}
+                        </div>
+                    }
+
+                </div>
+
+
+                <!-- CONFIRMAR CONTRASEÑA -->
+                <div class="col-12 col-md-6 mb-3">
+
+                    <label
+                        for="confirmarContrasena"
+                        class="form-label">
+                        Confirmar contraseña *
+                    </label>
+
+                    <input
+                        type="password"
+                        class="form-control"
+                        id="confirmarContrasena"
+                        name="confirmarContrasena"
+                        [(ngModel)]="confirmarContrasena"
+                        (blur)="validarConfirmarContrasena()">
+
+                    @if (errorConfirmarContrasena) {
+                        <div class="form-text text-danger">
+                            {{ errorConfirmarContrasena }}
+                        </div>
+                    }
+
+                </div>
+
+            </div>
+
+
+            <!-- TÉRMINOS -->
+            <div class="mb-4">
+
+                <div class="form-check">
+
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="terminos"
+                        name="terminos"
+                        [(ngModel)]="terminos"
+                        (change)="validarTerminos()">
+
+                    <label
+                        class="form-check-label"
+                        for="terminos">
+                        Acepto los términos y condiciones *
+                    </label>
+
+                </div>
+
+                @if (errorTerminos) {
+                    <div class="form-text text-danger">
+                        {{ errorTerminos }}
+                    </div>
+                }
+
+            </div>
+
+
+            <!-- BOTÓN -->
+            <div class="d-flex justify-content-start">
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+                    Registrar
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>

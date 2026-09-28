@@ -1,0 +1,62 @@
+.carousel {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 18px 42px rgb(23 59 58 / 17%);
+}
+
+.carousel-item img {
+    height: 470px;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    right: auto;
+    bottom: 3rem;
+    left: 7%;
+    max-width: min(650px, 78%);
+    padding: 1.1rem 1.35rem;
+    border-left: 4px solid var(--clinica-sky);
+    border-radius: 0 8px 8px 0;
+    background: rgb(18 48 47 / 88%);
+    color: #fff;
+    text-align: left;
+}
+
+.carousel-caption h3 {
+    margin-bottom: 0.4rem;
+    font-size: 1.45rem;
+}
+
+.carousel-caption p {
+    margin-bottom: 0;
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 1.8rem;
+    height: 0.22rem;
+    border: 0;
+    border-radius: 1rem;
+}
+
+@media (max-width: 767.98px) {
+    .carousel-item img {
+        height: 340px;
+    }
+
+    .carousel-caption {
+        right: 1rem;
+        bottom: 2.3rem;
+        left: 1rem;
+        max-width: none;
+        padding: 0.75rem 0.9rem;
+    }
+
+    .carousel-caption h3 {
+        font-size: 1.05rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.82rem;
+        line-height: 1.35;
+    }
+}
